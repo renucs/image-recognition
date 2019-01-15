@@ -26,7 +26,7 @@ visualRecognition.classify(params, function(err, response) {
    var class_col= response.images[0].classifiers[0].classes;
    //to get the array of classes (category classification)
    for(i=0; i<class_col.length;i++){
-       res.write(class_col.class + "\n") //getting the class name
+       res.write(class_col[i].class + "\n") //getting the class name
    }
    res.end("END");
     console.log(result);
