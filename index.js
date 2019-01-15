@@ -22,7 +22,7 @@ visualRecognition.classify(params, function(err, response) {
     var result= JSON.stringify(response, null, 2);
     res.write(response.images.constructor.name + "\n");
     res.write(response.images[0].classifiers.constructor.name+"\n");
-    res.end(response.images[0].classifiers[0].classes[0].score+"\n");
+    res.end(response.images[0].classifiers[0].classes+"\n");
     console.log(result);
     
 });
