@@ -6,7 +6,8 @@ var app = express();
 app.get("/test",function(req,res){
   var visualRecognition = new VisualRecognitionV3({
   version: '2018-03-19',
-  api_key: 'k-B-HtEAvUgwQ-9pG6Hnw4xX_apnRtj_aokRFEjuBXv6'
+  iam_apikey:'k-B-HtEAvUgwQ-9pG6Hnw4xX_apnRtj_aokRFEjuBXv6'
+
 });
 
 var params = {
@@ -17,7 +18,11 @@ visualRecognition.classify(params, function(err, response) {
   if (err)
     console.log(err);
   else
-    console.log(JSON.stringify(response, null, 2))
+  //Store response into a string
+    var result= JSON.stringify(response, null, 2);
+    res.end(result);
+    console.log(result);
+    
 });
 
 })
