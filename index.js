@@ -20,7 +20,7 @@ visualRecognition.classify(params, function(err, response) {
   else
   //Store response into a string
     var result= JSON.stringify(response, null, 2);
-    res.end(result);
+    res.end(response.images);
     console.log(result);
     
 });
@@ -28,8 +28,9 @@ visualRecognition.classify(params, function(err, response) {
 })
 
 
-// we take this away now so we start listening on heroku and not our comp-->>var listener = app.listen(4000,process.env.IP,function(){
-	var listener = app.listen(process.env.PORT,process.env.IP,function(){
+// we take this away now so we start listening on heroku and not our comp-->>
+var listener = app.listen(4000,process.env.IP,function(){
+	//var listener = app.listen(process.env.PORT,process.env.IP,function(){
 	console.log("server has started");
 	 console.log('Listening on port ' + listener.address().port);
 });
