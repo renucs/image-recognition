@@ -20,9 +20,15 @@ visualRecognition.classify(params, function(err, response) {
   else
   //Store response into a string
     var result= JSON.stringify(response, null, 2);
-    res.write(response.images.constructor.name + "\n");
-    res.write(response.images[0].classifiers.constructor.name+"\n");
-    res.end(response.images[0].classifiers[0].classes[0].score+"\n");
+    //res.write(response.images.constructor.name + "\n");
+    //res.write(response.images[0].classifiers.constructor.name+"\n");
+    //res.end(response.images[0].classifiers[0].classes[0].score+"\n");
+   var class_col= response.images[0].classifiers[0].classes;
+   //to get the array of classes (category classification)
+   for(i=0; i<class_col.length;i++){
+       res.write(class_col.class + "\n") //getting the class name
+   }
+   res.end("END");
     console.log(result);
     
 });
