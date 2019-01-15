@@ -28,9 +28,8 @@ visualRecognition.classify(params, function(err, response) {
 })
 
 
-//var listener = app.listen(process.env.PORT,process.env.IP,function(){
-var listener = app.listen(4000,process.env.IP,function(){
-	//var listener = app.listen(process.env.PORT,process.env.IP,function(){
+// we take this away now so we start listening on heroku and not our comp-->>var listener = app.listen(4000,process.env.IP,function(){
+	var listener = app.listen(process.env.PORT,process.env.IP,function(){
 	console.log("server has started");
 	 console.log('Listening on port ' + listener.address().port);
 });
