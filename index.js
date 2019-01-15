@@ -11,7 +11,7 @@ app.get("/test",function(req,res){
 });
 
 var params = {
-  url:"https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-x/silver/Apple-iPhoneX-Silver-1-3x.jpg"
+  url:"https://www.lg.com/ca_en/images/tvs/42cs560/gallery/lg-monitors-cs560-large01.jpg"
 };
 
 visualRecognition.classify(params, function(err, response) {
