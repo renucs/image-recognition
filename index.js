@@ -20,7 +20,7 @@ visualRecognition.classify(params, function(err, response) {
   else
   //Store response into a string
     var result= JSON.stringify(response, null, 2);
-    res.end(response.images+"");
+    res.end(response.images.constructor.name+"");
     console.log(result);
     
 });
